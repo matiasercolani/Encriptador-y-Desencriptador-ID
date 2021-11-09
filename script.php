@@ -1,6 +1,4 @@
 <?php
-// https://localhost/sitepro/script.php?id=WQKY365VJTOQ420VHT231V
-
 
 
 if(isset($_GET['id'])){
@@ -9,50 +7,24 @@ if(isset($_GET['id'])){
 
     $numeroDeSerie = Desencriptar($id);
 
-    echo consultaSQL($numeroDeSerie);
+    $ObjetoNumSerie = [
+        'Respuesta' => 'ID Desencriptado - Su numero de serie es: ',
+        'ID' => $numeroDeSerie,
+    ];
+
+    echo json_encode($ObjetoNumSerie);
 
     
 } else{
 
+    $ObjetoNumSerie = [
+        'Respuesta' => 'No se pudo desencriptar',
+        'ID' => 'eToken no compatible',
+    ];
+
     echo 'Error - ID no recibido.';
 
-}
-
-
-
-
-function consultaSQL($numeroDeSerie){
-
-    // $numeroDeSerie = "asddaf1231";
-
-    // Conexion a base de datos
-    $conexion=new mysqli("localhost","root","","etoken") or die("not conexionected".mysqli_conexionect_error());
-
-    $sql = "SELECT * FROM `tablatoken` WHERE `num_serie` = '".$numeroDeSerie."';";
-    
-    $query = mysqli_query($conexion, $sql);
-
-    if($query){
-        if(mysqli_fetch_row($query) >=1){
-
-            $ObjetoNumSerie = [
-                'Respuesta' => 'Usuario Autenticado - Su numero de serie es: ',
-                'ID' => $numeroDeSerie,
-            ];
-
-            // $respuesta = "Usuario Autenticado - Su numero de serie es: ".$numeroDeSerie;
-        }else{
-            $ObjetoNumSerie = [
-                'Respuesta' => 'Usuario NO Autenticado',
-                'ID' => 'ID no encontrado',
-            ];
-            // $respuesta = "Usuario NO Autenticado";
-        }
-    }else{
-        echo mysqli_error($conexion);
-    }
-
-    return json_encode($ObjetoNumSerie);
+    echo json_encode($ObjetoNumSerie);
 
 }
 

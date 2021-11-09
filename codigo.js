@@ -1,10 +1,10 @@
 let parametroUrl = window.location.search.substring(1);
 
-console.log(parametroUrl);
+const urlConst = "https://localhost/encriptador-sitepro/Encriptador-y-Desencriptador-ID/";                  // En esta constante se coloca la URL(base) a la cual se debe redirigir
 
-let urlPhp = "https://localhost/sitepro/script.php?"
+const urlPhp = "script.php?";
 
-let urlCompleta = urlPhp + parametroUrl;
+let urlCompleta = urlConst + urlPhp + parametroUrl;
 
 console.log(urlCompleta);
 
