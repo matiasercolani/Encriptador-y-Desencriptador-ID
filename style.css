@@ -1,0 +1,81 @@
+/*getQueryVariable(token)*/
+    /* Create columns that floats next to each other */
+    body {
+        margin: 0 auto;
+        font-family: 'Roboto', sans-serif;
+        background: #f9f9f9;
+    }
+
+    a {
+        text-decoration: none;
+        color: #00a9e0;
+        font-weight: 500;
+        font-style: italic;
+    }
+
+    nav {
+        border-bottom: 1px solid #E1E4E6;
+        padding: 12px 15px;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+    }
+
+    .nav-container {
+        width: 100%;
+        max-width: 900px;
+        justify-content: space-between;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .ayuda {
+        display: flex;
+        align-items: center;
+    }
+
+    .ayuda span a:hover {
+        color: #1dc0f5;
+        transition: color 0.5s;
+    }
+
+    section {
+        width: 100%;
+        max-width: 900px;
+        margin: 0 auto;
+        padding-top: 150px;
+    }
+
+    .column0 {
+      width: 100%;
+      font-size: 12px;
+      font-weight: normal;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .column0 img {
+      width: 200px;
+    }
+
+    .column0 span.subtitulo {
+      margin: 30px 0 10px 0;
+    }
+
+    span.subtitulo {
+        color: #3f3f3f;
+        font-size: 16px;
+        margin: auto;
+        padding: 0 50px;
+    }
+
+    #Data {
+        border-bottom: 2px solid;
+    }
+
+    h1.IDdata {
+        font-weight: 800;
+        font-size: 20px;
+    }
